@@ -93,6 +93,8 @@ window.addEventListener('load', function () {
     //document.addEventListener("deviceReady", onDeviceReady, false);
 
     //getNotes();
+    alert('Total Width: ' + screen.width);
+    alert('Total Height: ' + screen.height);
 
 }, false);
 
