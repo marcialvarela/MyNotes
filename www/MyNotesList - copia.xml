@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyNotesList>
+	<Note>
+		<Date>01/01/2015 10:15:59</Date>
+		<Text>Mi primera nota</Text>
+		<Audio>Audio 1</Audio>
+		<Photo>Photo 1</Photo>
+	</Note>
+	<Note>
+		<Date>13/01/2015 14:11:19</Date>
+		<Text>Mi segunda nota</Text>
+		<Audio>Audio 2</Audio>
+		<Photo></Photo>
+	</Note>
+	<Note>
+		<Date>27/01/2015 21:41:01</Date>
+		<Text>Mi tercera nota</Text>
+		<Audio></Audio>
+		<Photo>Photo 3</Photo>
+	</Note>
+</MyNotesList>

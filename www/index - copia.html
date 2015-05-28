@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>MyNotes App</title>
+    </head>
+    <body>
+        <div class="app" style="top:100px; left: 100px; " align="center;">
+            <table cellpadding="0" cellspacing="0" border="0" width="520px"  align="center" style="background-color: #ececec;">
+                <tr valign="middle" align="center" style="width: 520px;">
+                    <td valign="top" align="left" style="background-color: #ececec; color: #000000;width: 520px;">
+                        <table valign="top" cellpadding="0" cellspacing="0" border="0" width="520px" align="center" style="background-color: #ececec;height: 50px">
+                            <td colspan="7" align="left" style="background-color: cornflowerblue; color: #eeeeee">
+                                <!--<label for="b1" style="font-size: 25pt">&nbsp;MyNotes</label>-->
+                                <img id="MyNotesLogo" src="img/MyNotes.png" align="center" width="190px" height="40px" border="none" />
+                            </td>
+                            <td width="50px" style="background-color: cornflowerblue; color: #eeeeee">
+                                <img id="exitImg" src="img/exit_w.png" align="center" width="45px" height="45px" border="none" onclick="exitApp();" />
+                            </td>
+                        </table>
+                    </td>
+                </tr>
+                <tr valign="top" align="left" style="width: 520px;">
+                    <td valign="top" align="left" style="background-color: #ececec; color: #000000;width: 520px;">
+                        <table valign="top" cellpadding="0" cellspacing="0" border="0" width="520px" style="background-color: #ececec;">
+                            <tr valign="top" align="left" style="width: 520px;">
+                                <td colspan="3" style="height: 7px;"></td>
+                            </tr>
+                            <tr valign="top" align="left" style="width: 520px;">
+                                <td width="10px"></td>
+                                <td width="400px" valign="top">
+                                    <div id="inputs" style="position:relative">
+                                        <input id="addText" type='text' placeholder='my note' style="font-family: 'Helvetica Neue Light', 'Lucida Grande', 'Calibri', 'Arial', 'sans-serif';font-size: 25pt" width="100%" onkeyup="cambiaIcono();"/>
+                                        <div id="divCancel" style="position:absolute; top:0; left:0;">
+                                            <table cellpadding="0" cellspacing="0" border="0" style="width: 350px; height: 50px; background-color: khaki;">
+                                                <tr>
+                                                    <td align="center">
+                                                        <label for="lbllegend" style="height: 50px;width: 350px; background-color: khaki; color:red; vert-align: middle; font-family: Arial; font-size: 16pt; font-weight: bold;">DESLICE PARA CANCELAR</label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </td>
+                                <td width="150px">
+                                    <div id="divButtons" style="position:relative">
+                                        <img id="photoImg" src="img/photo.png" width="50" hspace="0" height="50" vspace="0" />
+                                        <img id="recordAudio_Push" src="img/micro_push.png" width="50" hspace="0" height="50" vspace="0" />
+                                        <div id="divOk" style="position:absolute; top:0; left:0;">
+                                            <img id="okImg" border="0" src="img/play.png" width="50" height="50" style="visibility: hidden;" onclick="addNote();"/>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top" align="left" style="width: 520px;">
+                                <td colspan="3" style="height: 1px;"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr valign="middle" align="center" style="width: 520px;">
+                    <td valign="top" align="left" style="background-color: #fefefe; color: #000000;width: 520px;">
+                        <table valign="top" cellpadding="0" cellspacing="0" border="0" width="520px" align="center" style="background-color: #fefefe;height: 30px">
+                            <td align="left" style="background-color: transparent;width: 6px"></td>
+                            <td align="left" style="background-color: cornflowerblue; color: #fefefe">
+                                <table valign="top" cellpadding="0" cellspacing="0" border="0" width="500px" align="center" style="background-color: #fefefe;height: 30px; border-color: cornflowerblue; border: 1px;">
+                                    <tr>
+                                        <td align="left" style="background-color: cornflowerblue; color: #fefefe;">
+                                            <label for="llist1" style="font-size: 18pt">&nbsp;Notes</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" style="background-color: transparent; ">
+                                            <table id="tableNotes" cellspacing="0" cellpadding="0" border="0" style="background-color: white; color:#000000; font-family: 'Helvetica Neue Light', 'Lucida Grande', 'Calibri', 'Arial', 'sans-serif'; font-size: x-large;">
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td align="left" style="background-color: transparent;width: 6px"></td>
+                        </table>
+                    </td>
+                </tr>
+                <tr valign="top" align="left" style="width: 520px;">
+                    <td valign="top" align="left" style="background-color: #ececec; color: #000000;width: 520px;">
+                        <table valign="top" cellpadding="0" cellspacing="0" border="0" width="520px" style="background-color: #ececec;height: 800px">
+                            <td width="10px"></td>
+                            <td width="400px">
+                            </td>
+                            <td width="50px" align="center">
+
+                            </td>
+                            <td style="width: 10px;"></td>
+                            <td width="50px">
+
+                            </td>
+                            <td width="50px">
+
+                            </td>
+                            <td width="10px"></td>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--
+            <table cellpadding="0" cellspacing="0" border="1" width="520px"  align="center" style="background-color: #ececec; height: 55px;">
+                <tr valign="top">
+                    <td width="10px"></td>
+                    <td width="100px" valign="center">
+                        <p id="audio_position" style="font-family: Arial; font-size: 14pt ; font-weight: bold; height: 55px;"></p>
+                    </td>
+                    <td width="255px" align="left" height="55px" valign="center">
+                        <div id="divlegend" style="visibility: hidden; background-color: khaki; width: 255px; height: 55px;" >
+                            <table cellpadding="0" cellspacing="0" border="0" width="255px" align="center" style="background-color: khaki; height: 55px;">
+                                <tr>
+                                    <td width="5px" align="center"></td>
+                                    <td width="30px" align="center">
+                                        <img id="recImg" src="img/micro_push_rec.png" align="left" width="30px" height="30px" border="none" />
+                                    </td>
+                                    <td width="215px" align="center">
+                                        <label for="lbllegend" style="font-family: Arial; font-size: 12pt; font-weight: bold;">DESLICE PARA CANCELAR</label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td width="50px">
+                        <img id="playAudio_Push" src="img/play_red.png" align="center" width="50px" height="50px" border="none" onclick="playAudioPush();" />
+                    </td>
+                    <td width="10px"></td>
+                </tr>
+            </table>
+            -->
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <!--<script type="text/javascript" src="js/audio.js"></script>-->
+        <script type="text/javascript" src="js/photo.js"></script>
+        <!--
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        -->
+    </body>
+</html>
