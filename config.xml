@@ -2,7 +2,7 @@
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>MyNotesApp</name>
     <description>
-        MyNotes Application
+        MyN App
     </description>
     <author href="http://www.Settingconsultoria.com" email="marcial.varela@gmail.com">
         MVL
@@ -42,7 +42,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
 
-    <icon src="MyNotes.png" />
+    <icon src="logo.png" />
     <!--
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
