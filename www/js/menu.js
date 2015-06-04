@@ -28,7 +28,7 @@ function mostrarAudio() {
 function mostrarVideo() {
 
     alert('mostrarVideo');
-    
+
     document.getElementById('inicio').style.visibility="hidden";
     document.getElementById('menu').style.visibility="visible";
 
@@ -66,6 +66,9 @@ function mostrarText() {
 
 /*************** MOSTRAR PHOTO ***************/
 function mostrarPhoto() {
+
+    alert('mostrarPhoto');
+
     document.getElementById('inicio').style.visibility="hidden";
     document.getElementById('menu').style.visibility="visible";
 

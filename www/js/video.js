@@ -24,7 +24,7 @@ function captureVideo() {
     // Launch device video recording application,
     // allowing user to capture up to 2 video clips
     alert('Entra en captureVideo');
-    navigator.device.capture.captureVideo(captureSuccess, captureError, {limit: 2});
+    navigator.device.capture.captureVideo(captureSuccess, onFail, {limit: 2});
 }
 
 // Upload files to server
@@ -48,5 +48,7 @@ function uploadFile(mediaFile) {
         { fileName: name });
 }
 
-
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
 /*************************** PHOTO - FIN ***************************/
