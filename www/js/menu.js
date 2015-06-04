@@ -26,6 +26,9 @@ function mostrarAudio() {
 
 /*************** MOSTRAR VIDEO ***************/
 function mostrarVideo() {
+
+    alert('mostrarVideo');
+    
     document.getElementById('inicio').style.visibility="hidden";
     document.getElementById('menu').style.visibility="visible";
 
@@ -38,6 +41,7 @@ function mostrarVideo() {
     document.getElementById('mostrarButtonsOK').style.visibility="visible";
 
     document.getElementById("menu").style.backgroundColor = '#3398FF';
+
 
     captureVideo();
 }
