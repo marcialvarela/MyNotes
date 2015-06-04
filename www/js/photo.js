@@ -33,7 +33,7 @@ function onPhotoDataSuccess(imageData) {
     //
     smallImage.src = "data:image/jpeg;base64," + imageData;
 
-    smallImage.width = '680px';
+    smallImage.width = '480px';
     smallImage.height = 'auto';
     smallImage.border = '0px';
 }
