@@ -31,127 +31,114 @@
     </head>
     <body>
         <!-- Tamaño FNAC5 540 X 960 -->
-        <div class="app" style="position:absolute; top:0px; left: 0px;width: 100%; height: 80%; overflow-x: hidden; overflow-y: hidden; " align="center">
-            <table cellpadding="0" cellspacing="0" border="1" width="100%" align="center" style="background-color: transparent; ">
-                <tr valign="middle" align="center" style="width: 100%;">
-                    <td valign="top" align="left" style="background-color: transparent; color: #000000;width: 100%;">
-                        <div id="inicio" style="position:absolute; top:0; left:0px;vertical-align: middle;height: 100%;">
-                            <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center" style="background-color:transparent;">
-                                <td width="100%" style="background-color: transparent;" valign="middle">
-                                    <img id="logo" src="img/logo.png" align="center" width="520px" height="389px" border="none" onclick="mostrarMenu();" />
-                                </td>
-                            </table>
-                        </div>
+        <div class="app" id="principal" style="position:relative; top:90px; left: 200px;width: 540px; height: 960px; overflow-x: hidden; overflow-y: hidden;background-color: transparent; border-style: solid;border-width: 1px;" align="center">
+            <div id="inicio" style="position:absolute; top:200px; left:0px;vertical-align: middle;height: 540px;">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center" style="background-color:transparent;">
+                    <td width="100%" style="background-color: transparent;" valign="middle">
+                        <!-- width="520px" height="389px" -->
+                        <img id="logo" src="img/logo.png" align="center" width="720px" height="524px" border="none" onclick="mostrarMenu();" />
+                    </td>
+                </table>
+            </div>
+            <div id="a5" style="position:absolute; top:10px; left:590px; visibility: visible; background-color: transparent;">
+                <img id="exit" src="img/exit.png" align="center" width="100px" height="100px" border="none" onclick="mostrarInicio();exitApp();" />
+            </div>
 
-                        <!-- MENU -->
-                        <div id="menu" style="position:absolute; top:0; left:0px; visibility: hidden; background-color: transparent; vertical-align: top; height: auto;">
-                            <table valign="top" cellpadding="0" cellspacing="0" border="0" width="100%" align="center" style="background-color:transparent;">
-                                <tr>
-                                    <td style="background-color: transparent;" align="middle">
-                                        <img id="micro" src="img/micro.png" align="center" width="100px" height="100px" border="none" onclick="mostrarAudio();" />
-                                    </td>
-                                    <td style="background-color: transparent;" align="middle">
-                                        <img id="audio" src="img/video.png" align="center" width="100px" height="100px" border="none" onclick="mostrarVideo();" />
-                                    </td>
-                                    <td style="background-color: transparent;" align="middle">
-                                        <img id="text" src="img/text.png" align="center" width="100px" height="100px" border="none" onclick="mostrarText();" />
-                                    </td>
-                                    <td style="background-color: transparent;" align="middle">
-                                        <img id="camera" src="img/camera.png" align="center" width="100px" height="100px" border="none" onclick="mostrarPhoto();" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="50px" colspan="4" style="background-color: transparent;"></td>
-                                </tr>
-                            </table>
-                        </div>
+            <!-- MENU  border-style: solid;border-width: 1px; -->
+            <div id="menu" style="position:absolute; top:10px; left:0px; width: 100%; height: 100%; visibility: hidden; background-color: transparent; vertical-align: top; height: auto; align-content: center;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div id="a1" style="position:absolute; top:150px; left:10px; visibility: hidden; background-color: transparent;">
+                    <img id="micro" src="img/micro.png" align="center" width="330px" height="330px" border="none" onclick="mostrarAudio();" />
+                </div>
+                <div id="a2" style="position:absolute; top:150px; left:360px; visibility: hidden; background-color: transparent;">
+                    <img id="audio" src="img/video.png" align="center" width="330px" height="330px" border="none" onclick="mostrarVideo();" />
+                </div>
+                <div id="a3" style="position:absolute; top:500px; left:10px; visibility: hidden; background-color: transparent;">
+                    <img id="text" src="img/text.png" align="center" width="330px" height="330px" border="none" onclick="mostrarText();" />
+                </div>
+                <div id="a4" style="position:absolute; top:500px; left:360px; visibility: hidden; background-color: transparent;">
+                    <img id="camera" src="img/camera.png" align="center" width="330px" height="330px" border="none" onclick="mostrarPhoto();" />
+                </div>
+            </div>
 
-                        <!-- INTRO AUDIO -->
-                        <div id="mostrarAudio" style="position:absolute; top:150px; left:120px; visibility: hidden;">
-                            <table valign="top" cellpadding="0" cellspacing="0" border="0" width="500px" align="center" style="background-color:#505D76;">
-                                <tr>
-                                    <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
-                                    <td align="left" valign="middle" style="width: 70px;height: 70px;">
-                                        <img id="audio_logo" src="img/micro.png" align="center" width="60px" height="60px" border="none" />
-                                    </td>
-                                    <td>
-                                        <label for="lblAudio" style="font-size: 18pt">&nbsp;Capture audio</label>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+            <!-- INTRO AUDIO -->
+            <div id="mostrarAudio" style="position:absolute; top:150px; left:120px; visibility: hidden;">
+                <table valign="top" cellpadding="0" cellspacing="0" border="0" width="500px" align="center" style="background-color:#505D76;">
+                    <tr>
+                        <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
+                        <td align="left" valign="middle" style="width: 70px;height: 70px;">
+                            <img id="audio_logo" src="img/micro.png" align="center" width="60px" height="60px" border="none" />
+                        </td>
+                        <td>
+                            <label for="lblAudio" style="font-size: 18pt">&nbsp;Capture audio</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
 
-                        <!-- INTRO VIDEO -->
-                        <div id="mostrarVideo" style="position:absolute; top:150px; left:120px; visibility: hidden;">
-                            <table valign="top" cellpadding="0" cellspacing="0" border="0" width="500px" align="center" style="background-color:#3398FF;">
-                                <tr>
-                                    <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
-                                    <td align="left" valign="middle" style="width: 70px;height: 70px;">
-                                        <img id="video_logo" src="img/video.png" align="center" width="60px" height="60px" border="none" />
-                                    </td>
-                                    <td>
-                                        <label for="lblVideo" style="font-size: 18pt">&nbsp;Capture video</label>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+            <!-- INTRO VIDEO -->
+            <div id="mostrarVideo" style="position:absolute; top:150px; left:120px; visibility: hidden;">
+                <table valign="top" cellpadding="0" cellspacing="0" border="0" width="500px" align="center" style="background-color:#3398FF;">
+                    <tr>
+                        <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
+                        <td align="left" valign="middle" style="width: 70px;height: 70px;">
+                            <img id="video_logo" src="img/video.png" align="center" width="60px" height="60px" border="none" />
+                        </td>
+                        <td>
+                            <label for="lblVideo" style="font-size: 18pt">&nbsp;Capture video</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
 
-                        <!-- INTRO TEXT -->
-                        <div id="mostrarText" style="position:absolute; top:150px; left:120px; visibility: hidden;">
-                            <table valign="top" cellpadding="0" cellspacing="0" border="0" width="500px" align="center" style="background-color:#8CAD07;">
-                                <tr>
-                                    <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
-                                    <td align="left" valign="middle" style="width: 70px;height: 70px;">
-                                        <img id="text_logo" src="img/text.png" align="center" width="60px" height="60px" border="none" />
-                                    </td>
-                                    <td style="height: 70px;">&nbsp;&nbsp;&nbsp;</td>
-                                    <td align="left" valign="middle" style="height: 70px;">
-                                        <input id="addText" type='text' placeholder='intro text' style="font-family: 'Helvetica Neue Light', 'Lucida Grande', 'Calibri', 'Arial', 'sans-serif';font-size: 25pt" width="100%"/>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+            <!-- INTRO TEXT -->
+            <div id="mostrarText" style="position:absolute; top:150px; left:120px; visibility: hidden;">
+                <table valign="top" cellpadding="0" cellspacing="0" border="0" width="500px" align="center" style="background-color:#8CAD07;">
+                    <tr>
+                        <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
+                        <td align="left" valign="middle" style="width: 70px;height: 70px;">
+                            <img id="text_logo" src="img/text.png" align="center" width="60px" height="60px" border="none" />
+                        </td>
+                        <td style="height: 70px;">&nbsp;&nbsp;&nbsp;</td>
+                        <td align="left" valign="middle" style="height: 70px;">
+                            <input id="addText" type='text' placeholder='intro text' style="font-family: 'Helvetica Neue Light', 'Lucida Grande', 'Calibri', 'Arial', 'sans-serif';font-size: 25pt" width="100%"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
 
 
-                        <!-- INTRO PHOTO -->
-                        <div id="mostrarPhoto" style="position:absolute; top:150px; left:120px; visibility: hidden;">
-                            <table valign="top" cellpadding="0" cellspacing="0" border="0" width="500px" align="center" style="background-color:#CA3749;">
-                                <tr>
-                                    <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
-                                    <td align="left" valign="middle" style="width: 70px;height: 70px;">
-                                        <img id="photo_logo" src="img/camera.png" align="center" width="60px" height="60px" border="none" />
-                                    </td>
-                                    <td>
-                                        <label for="lblCamera" style="font-size: 18pt">&nbsp;Capture photo</label>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+            <!-- INTRO PHOTO -->
+            <div id="mostrarPhoto" style="position:absolute; top:0px; left:0px; visibility: hidden; width: 100%">
+                <div id="Phototitle" style="position:absolute; top:160px; left:12px; visibility: hidden;">
+                    <img id="smallImage" src="" align="center" width="680px" height="680px" style="border-width: 1px; border-style: solid;" />
+                </div>
+            </div>
 
 
 
-                        <!-- BOTONES OK / CANCEL -->
-                        <div id="mostrarButtonsOK" style="position:absolute; top:900px; left:100px; visibility: hidden;">
-                            <table valign="top" cellpadding="0" cellspacing="0" border="0" width="100%" align="center" style="background-color: lightgrey;">
-                                <tr>
-                                    <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
-                                    <td align="middle" valign="middle" style="width: 250px;height: 60px;">
-                                        <img id="buttonOK" src="img/ok.png" align="center" width="50px" height="50px" border="none" />
-                                    </td>
-                                    <td style="height: 60px;border-left-color: #c8c8c8;border-style: solid; border-width: thin;"></td>
-                                    <td align="middle" valign="middle" style="width: 250px;height: 60px;">
-                                        <img id="buttonCancel" src="img/cancel.png" align="center" width="50px" height="50px" border="none" onclick="cancelMenu();"  />
-                                    </td>
-                                    <td style="height: 50px;">&nbsp;&nbsp;&nbsp;</td>
-                                </tr>
-                            </table>
-                        </div>
+            <!-- BOTONES OK / CANCEL -->
+            <div id="mostrarButtonsOK" style="position:absolute; top:900px; left:0px; visibility: hidden;">
+                <div id="btn1" style="position:absolute; top:0px; left:50px; visibility: hidden; width: 100%">
+                    <img id="buttonOK" src="img/check.png" align="center" width="200px" height="200px" border="none" onclick="guardarNota();"/>
+                </div>
+                <div id="btn2" style="position:absolute; top:0px; left:450px; visibility: hidden; width: 100%">
+                    <img id="buttonCancel" src="img/cancel.png" align="center" width="200px" height="200px" border="none" onclick="cancelMenu();"  />
+                </div>
+            </div>
+
+            <!--
+            <table cellpadding="0" cellspacing="0" border="21" width="100%" align="center" style="background-color: transparent; ">
+                <tr valign="middle" align="center" style="width:100%;">
+                    <td valign="top" align="center" style="background-color: transparent; color: #000000;width: 540px;">
+
 
                     </td>
                 </tr>
             </table>
+            -->
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/menu.js"></script>

@@ -93,7 +93,7 @@ window.addEventListener('load', function () {
     //document.addEventListener("deviceReady", onDeviceReady, false);
 
     //getNotes();
-    alert('Width: ' + screen.width + '  Height: ' + screen.height);
+    //alert('Width: ' + screen.width + '  Height: ' + screen.height);
 
 }, false);
 
@@ -130,6 +130,8 @@ function onDeviceReady() {
             // 'e' is an object, {code: 'Class not found'}
             alert('Error accessing local file system');
         });
+
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS_photo, fail);
     }
     catch (ex) {
         alert("deviceReady error: "+ex.message);
@@ -446,6 +448,8 @@ function setAudioPosition(position, iColor) {
 /*************************** EXIT APP - INI ***************************/
 function exitApp() {
 
+    alert('exitApp');
+
     clearInterval(recInterval);
     if (recStatus == 1){
         meFileRecord.stopRecord();
@@ -650,6 +654,27 @@ function pintaNotas(date, text, photo, audio, i){
 
 
 /*************************** PHOTO - INI ***************************/
+
+
+
+function gotFS_photo(fileSystem) {
+    fileSystem.root.getFile("pic.jpg", {create: true, exclusive: false}, gotFileEntry_photo, fail_photo);
+}
+
+function gotFileEntry_photo(fileEntry) {
+    fileEntry.createWriter(gotFileWriter_photo, fail);
+}
+
+function gotFileWriter_photo(writer) {
+
+    var photo = document.getElementById("smallImage");
+    writer.write(photo.value);
+
+}
+
+function fail_photo(error) {
+    alert('fail photo: ' + error);
+}
 
 /*
 var pictureSource;   // picture source
