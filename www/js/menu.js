@@ -39,7 +39,7 @@ function mostrarVideo() {
 
     document.getElementById("menu").style.backgroundColor = '#3398FF';
 
-    //captureVideo();
+    captureVideo();
 }
 
 
