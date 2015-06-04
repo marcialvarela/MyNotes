@@ -4,6 +4,7 @@
 // Called when capture operation is finished
 //
 function captureSuccess(mediaFiles) {
+    alert(mediaFiles);
     var i, len;
     for (i = 0, len = mediaFiles.length; i < len; i += 1) {
         uploadFile(mediaFiles[i]);
@@ -22,11 +23,15 @@ function captureError(error) {
 function captureVideo() {
     // Launch device video recording application,
     // allowing user to capture up to 2 video clips
+    alert('Entra en captureVideo');
     navigator.device.capture.captureVideo(captureSuccess, captureError, {limit: 2});
 }
 
 // Upload files to server
 function uploadFile(mediaFile) {
+
+    alert('Entra en uploadFile');
+
     var ft = new FileTransfer(),
         path = mediaFile.fullPath,
         name = mediaFile.name;
