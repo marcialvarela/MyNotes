@@ -656,7 +656,6 @@ function pintaNotas(date, text, photo, audio, i){
 /*************************** PHOTO - INI ***************************/
 
 
-
 function gotFS_photo(fileSystem) {
     fileSystem.root.getFile("pic.jpg", {create: true, exclusive: false}, gotFileEntry_photo, fail_photo);
 }
